@@ -1,0 +1,25 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<html>
+<head>
+  <link href="{% static 'css/login.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div class="login">
+  <h1>Sign Up</h1>
+  <form method="post" >
+      {% csrf_token %}
+      <div> <label>Username:</label>{{form.username}}</div>
+      <div> <label>First Name:</label>{{form.first_name}}</div>
+      <div> <label>Last Name:</label> {{form.last_name}}</div>
+      <div> <label>Email:</label>{{form.email}}</div>
+      <div> <label>Password:</label>{{form.password1}}</div>
+      <div> <label>Confirm Password:</label>{{form.password2}}</div>
+    <p class="submit"><input type="submit" name="commit" value="Sign UP"></p>
+  </form>
+</div>
+<div class="login-help">
+  <p>Already have an Account <a href="{% url 'login' %}">Click here to LOGIN</a>.</p>
+</div>
+</body>
+</html>
